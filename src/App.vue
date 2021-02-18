@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="main-content">
-      <button class="btn-normal" @click="test1">test</button>
+      <input v-model="input" />
+      <button class="btn-normal" @click="biggestNumber">test</button>
+      <button class="btn-normal" @click="clearLog">clear</button>
     </div>
   </div>
 </template>
@@ -16,13 +18,28 @@ export default {
     // HelloWorld,
   },
   data() {
-    return {};
+    return {
+      input: "",
+    };
   },
   computed: {},
   methods: {
-    test1() {
-      prgm.testFunction();
+    doTest() {
+      this.clearLog();
+      const result = this.biggestNumber();
+      console.log("==> result : ", result);
     },
+    clearLog() {
+      console.clear();
+    },
+    biggestNumber() {
+      // const input = this.input || [13, 132];
+      const input = this.input || [6, 10, 13, 12, 2];
+      return prgm.biggestNumber(input);
+    },
+  },
+  created() {
+    this.doTest();
   },
 };
 </script>
