@@ -1,0 +1,19 @@
+// layout은 화면에 대표적으로 나누위저니는 크기의 스타일을 지정한다
+
+
+// $header-height : 60px;
+
+
+
+
+
+html, body, #app{
+  @include noselect;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.main-content {
+    padding: 1rem;
+}
