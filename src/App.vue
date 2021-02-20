@@ -12,6 +12,7 @@
 // import HelloWorld from "./components/HelloWorld.vue";
 
 import * as prgm from "@/functions/programmers.js";
+import * as array from "@/functions/util-array.js";
 export default {
   name: "App",
   components: {
@@ -26,11 +27,40 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.augustTraffic();
+      const result = this.hIndex();
       console.log("==> result : ", result);
     },
     clearLog() {
       console.clear();
+    },
+    test1() {
+      const input = [1, 2, 3, 3, 4, 4];
+      return array.getDuplicate(input);
+    },
+    binSearch() {
+      let loop = 200;
+      let input = [];
+      // let target = 133;
+      for (let i = 1; i <= loop; i++) {
+        input.push(i);
+      }
+      console.log("input : ", input);
+
+      // let input2 = "abcdefghijklmnopqrstuvwxyz";
+      // input2 = input2.split("");
+
+      // let target2 = "q";
+
+      let input3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      return array.getAverage(input3);
+    },
+    hIndex() {
+      // const input = [3, 0, 6, 1, 5];
+      // const input = [0, 1, 2];
+      const input = [0, 1, 1];
+      console.log("input : ", input);
+      return prgm.hIndex(input);
     },
     biggestNumber() {
       // const input = this.input || [13, 132];
