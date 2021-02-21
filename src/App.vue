@@ -27,7 +27,7 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.devFunction();
+      const result = this.printer();
       console.log("==> result : ", result);
     },
     clearLog() {
@@ -36,6 +36,12 @@ export default {
     test1() {
       const input = [1, 2, 3, 3, 4, 4];
       return array.getDuplicate(input);
+    },
+    printer() {
+      const a = [2, 1, 3, 2];
+      // const a = [1, 1, 9, 1, 1, 1];
+      const b = 2;
+      return prgm.printer(a, b);
     },
     devFunction() {
       // [95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]
