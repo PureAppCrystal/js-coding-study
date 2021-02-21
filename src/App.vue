@@ -13,7 +13,7 @@
 
 import * as prgm from "@/functions/programmers.js";
 import * as array from "@/functions/util-array.js";
-import * as rspt from "@/functions/rsupport.js";
+import * as rspt from "@/functions/test-rsupport.js";
 export default {
   name: "App",
   components: {
