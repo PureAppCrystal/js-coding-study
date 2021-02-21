@@ -27,7 +27,7 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.hIndex();
+      const result = this.devFunction();
       console.log("==> result : ", result);
     },
     clearLog() {
@@ -36,6 +36,17 @@ export default {
     test1() {
       const input = [1, 2, 3, 3, 4, 4];
       return array.getDuplicate(input);
+    },
+    devFunction() {
+      // [95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]
+      // [96, 99, 98, 97]
+      // const input1 = [93, 30, 55];
+      // const input2 = [1, 30, 5];
+      // const input1 = [95, 90, 99, 99, 80, 99];
+      // const input2 = [1, 1, 1, 1, 1, 1];
+      const input1 = [96, 99, 98, 97];
+      const input2 = [1, 1, 1, 1, 1];
+      return prgm.devFunction(input1, input2);
     },
     binSearch() {
       let loop = 200;
