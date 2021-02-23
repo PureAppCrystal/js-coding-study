@@ -13,7 +13,7 @@
 
 import * as prgm from "@/functions/programmers.js";
 import * as array from "@/functions/util-array.js";
-import * as rspt from "@/functions/test-rsupport.js";
+// import * as rspt from "@/functions/test-rsupport.js";
 export default {
   name: "App",
   components: {
@@ -28,7 +28,7 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.rsupport_q1();
+      const result = this.newId();
       console.log("==> result : ", result);
     },
     clearLog() {
@@ -38,79 +38,85 @@ export default {
       const input = [1, 2, 3, 3, 4, 4];
       return array.getDuplicate(input);
     },
-
-    rsupport_q1() {
-      // const input = [
-      //   "DEPOSIT 3a 10000",
-      //   "CREATE 3a 300000",
-      //   "WITHDRAW 3a 150000",
-      //   "WITHDRAW 3a 150000",
-      // ];
-      const input = [
-        "CREATE 3a 300000",
-        "DEPOSIT 3a 10000",
-        "WITHDRAW 3a 150000",
-        "WITHDRAW 3a 150000",
-        "DEPOSIT 3a 10000",
-        "CREATE 3b 300000",
-        "CREATE 3c 300000",
-        "CREATE 3d 300000",
-        "CREATE 3e 300000",
-        "CREATE 3f 300000",
-        "CREATE 3g 300000",
-        "CREATE 3h 300000",
-        "CREATE 3i 300000",
-        "CREATE 3j 300000",
-        "CREATE 3k 300000",
-        "CREATE 3l 300000",
-
-        "CREATE 4b 300000",
-        "CREATE 4c 300000",
-        "CREATE 4d 300000",
-        "CREATE 4e 300000",
-        "CREATE 4f 300000",
-        "CREATE 4g 300000",
-        "CREATE 4h 300000",
-        "CREATE 4i 300000",
-        "CREATE 4j 300000",
-        "CREATE 4k 300000",
-        "CREATE 4l 300000",
-
-        "CREATE 4bddddd 300000",
-        "CREATE 4cdddd 300000",
-        "CREATE 4ddddd 300000",
-        "CREATE 4edddd 300000",
-        "CREATE 4fdddd 300000",
-        "CREATE 4gdddd 300000",
-        "CREATE 4hdddd 300000",
-        "CREATE 4idddd 300000",
-        "CREATE 4jdddd 300000",
-        "CREATE 4kdddd 300000",
-        "CREATE 4ldddd 300000",
-
-        "WITHDRAW 3a 150000",
-        "WITHDRAW 3a 150000",
-      ];
-      // const input = ["CREATE 3a 10000", "CREATE 3a 20000", "CREATE 2bw 30000"];
-      return rspt.Q1(input);
+    newId() {
+      // const input = "...!@BaT#*..y.abcdefghijklm";
+      // const input = "z-+.^.";
+      // const input = "123_.def"; //"123_.def"
+      const input = "=.=";
+      return prgm.newId(input);
     },
-    rsupport_q2() {
-      const input = [
-        "alex pizza pasta steak steak",
-        "bob noodle sandwich pasta",
-        "choi pizza sandwich pizza",
-        "alex pizza pasta steak",
-      ];
-      return rspt.Q2(input);
-    },
-    rsupport_q3() {
-      const input = [[1, 2]];
-      return rspt.Q3(3, input);
-    },
-    rsupport_q4() {
-      const input = [1, 2, 3, 3, 4, 4];
-      return rspt.Q4(input);
-    },
+    // rsupport_q1() {
+    //   // const input = [
+    //   //   "DEPOSIT 3a 10000",
+    //   //   "CREATE 3a 300000",
+    //   //   "WITHDRAW 3a 150000",
+    //   //   "WITHDRAW 3a 150000",
+    //   // ];
+    //   const input = [
+    //     "CREATE 3a 300000",
+    //     "DEPOSIT 3a 10000",
+    //     "WITHDRAW 3a 150000",
+    //     "WITHDRAW 3a 150000",
+    //     "DEPOSIT 3a 10000",
+    //     "CREATE 3b 300000",
+    //     "CREATE 3c 300000",
+    //     "CREATE 3d 300000",
+    //     "CREATE 3e 300000",
+    //     "CREATE 3f 300000",
+    //     "CREATE 3g 300000",
+    //     "CREATE 3h 300000",
+    //     "CREATE 3i 300000",
+    //     "CREATE 3j 300000",
+    //     "CREATE 3k 300000",
+    //     "CREATE 3l 300000",
+
+    //     "CREATE 4b 300000",
+    //     "CREATE 4c 300000",
+    //     "CREATE 4d 300000",
+    //     "CREATE 4e 300000",
+    //     "CREATE 4f 300000",
+    //     "CREATE 4g 300000",
+    //     "CREATE 4h 300000",
+    //     "CREATE 4i 300000",
+    //     "CREATE 4j 300000",
+    //     "CREATE 4k 300000",
+    //     "CREATE 4l 300000",
+
+    //     "CREATE 4bddddd 300000",
+    //     "CREATE 4cdddd 300000",
+    //     "CREATE 4ddddd 300000",
+    //     "CREATE 4edddd 300000",
+    //     "CREATE 4fdddd 300000",
+    //     "CREATE 4gdddd 300000",
+    //     "CREATE 4hdddd 300000",
+    //     "CREATE 4idddd 300000",
+    //     "CREATE 4jdddd 300000",
+    //     "CREATE 4kdddd 300000",
+    //     "CREATE 4ldddd 300000",
+
+    //     "WITHDRAW 3a 150000",
+    //     "WITHDRAW 3a 150000",
+    //   ];
+    //   // const input = ["CREATE 3a 10000", "CREATE 3a 20000", "CREATE 2bw 30000"];
+    //   return rspt.Q1(input);
+    // },
+    // rsupport_q2() {
+    //   const input = [
+    //     "alex pizza pasta steak steak",
+    //     "bob noodle sandwich pasta",
+    //     "choi pizza sandwich pizza",
+    //     "alex pizza pasta steak",
+    //   ];
+    //   return rspt.Q2(input);
+    // },
+    // rsupport_q3() {
+    //   const input = [[1, 2]];
+    //   return rspt.Q3(3, input);
+    // },
+    // rsupport_q4() {
+    //   const input = [1, 2, 3, 3, 4, 4];
+    //   return rspt.Q4(input);
+    // },
     printer() {
       const a = [2, 1, 3, 2];
       // const a = [1, 1, 9, 1, 1, 1];
