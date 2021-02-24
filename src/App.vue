@@ -28,7 +28,7 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.newId();
+      const result = this.stringZip();
       console.log("==> result : ", result);
     },
     clearLog() {
@@ -37,6 +37,17 @@ export default {
     test1() {
       const input = [1, 2, 3, 3, 4, 4];
       return array.getDuplicate(input);
+    },
+    stringZip() {
+      // "aabbaccc"	7 -> 2a2ba3c
+      // "ababcdcdababcdcd"	9
+      // "abcabcdede"	8
+      // "abcabcabcabcdededededede"	14
+      // "xababcdcdababcdcd"	17
+
+      // "aaaaaaaaaabbcc"
+      const input = "abcabcabcabcdededededede";
+      return prgm.stringZip(input);
     },
     newId() {
       // const input = "...!@BaT#*..y.abcdefghijklm";
