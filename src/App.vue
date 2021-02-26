@@ -13,6 +13,7 @@
 
 import * as prgm from "@/functions/programmers.js";
 import * as array from "@/functions/util-array.js";
+import * as test from "@/functions/test.js";
 // import * as rspt from "@/functions/test-rsupport.js";
 export default {
   name: "App",
@@ -28,7 +29,7 @@ export default {
   methods: {
     doTest() {
       this.clearLog();
-      const result = this.stringZip();
+      const result = this.test2();
       console.log("==> result : ", result);
     },
     clearLog() {
@@ -37,6 +38,14 @@ export default {
     test1() {
       const input = [1, 2, 3, 3, 4, 4];
       return array.getDuplicate(input);
+    },
+    test2() {
+      let arr = [{ a: 1 }, { a: 2 }, { a: 3 }, { a: 4 }, { a: 5 }];
+      test.test2(arr);
+      console.log("arr : ", arr);
+    },
+    classPrivate() {
+      return test.test1();
     },
     stringZip() {
       // "aabbaccc"	7 -> 2a2ba3c
